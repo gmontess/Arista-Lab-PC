@@ -1,4 +1,4 @@
-- hosts: leaf
+- hosts: leafs
 
   roles:
     - arista.eos-system
