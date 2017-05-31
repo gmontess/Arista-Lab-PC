@@ -1,0 +1,13 @@
+provider:
+  host: "{{ inventory_hostname }}"
+  username: admin
+  username: admin
+  use_ssl: no
+  authorize: yes
+  transport: cli
+
+vlans:
+ - vlanid: 2
+   name: production
+ - vlanid: 3
+   name: app
