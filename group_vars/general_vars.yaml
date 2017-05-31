@@ -1,7 +1,7 @@
 provider:
   host: "{{ inventory_hostname }}"
   username: admin
-  username: admin
+  password: digital1
   use_ssl: no
   authorize: yes
   transport: cli
