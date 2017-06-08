@@ -1,11 +1,3 @@
-provider:
-  host: "{{ inventory_hostname }}"
-  username: admin
-  password: digital1
-  use_ssl: no
-  authorize: yes
-  transport: cli
-
 vlans:
  - vlanid: 2
    name: production

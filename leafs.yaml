@@ -1,4 +1,4 @@
 - hosts: leafs
 
   roles:
-    - arista.eos-system
+    - arista.eos-bridging
