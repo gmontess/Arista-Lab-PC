@@ -37,3 +37,28 @@ Change /etc/hosts to avoid to change DNS in the firewall.
 10.10.101.11	leaf-sw4
 
 Test with pings that all the switches are reachable. 
+
+Create a file structure for Arista DC L2 type.
+- A main file "AristaDCL2.yml" that call other subfiles.
+	- leafs.yaml for leafs switches roles.
+	- spines.yaml for spines switches roles.
+
+################## AristaDCL2.yml <start> ########################
+#Playbook for Arista DC L2 type.
+- include: spine.yaml
+- include: leaf.yaml
+################## AristaDCL2.yml <end> ########################
+
+################## leafs.yaml.yml <start> ########################
+# Playbook for leafs switches
+- hosts: leafs
+  gather_facts: no
+
+  roles:
+        - arista.eos-bridging
+        - arista.eos-interfaces
+        - arista.eos-ipv4
+        - arista.eos-mlag
+        - arista.eos-system
+
+
