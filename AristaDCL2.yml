@@ -1,0 +1,3 @@
+#Playbook for Arista DC L2 type.
+- include: spines.yaml
+- include: leafs.yaml

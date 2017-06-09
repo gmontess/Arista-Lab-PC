@@ -1,5 +1,5 @@
-# Playbook for leafs switches
-- hosts: leafs
+# Playbook for spines switches
+- hosts: spines
   gather_facts: no
 
   roles:
