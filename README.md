@@ -49,7 +49,7 @@ Create a file structure for Arista DC L2 type.
 - include: leaf.yaml
 ################## AristaDCL2.yml <end> ########################
 
-################## leafs.yaml.yml <start> ########################
+################## leafs.yaml<start> ########################
 # Playbook for leafs switches
 - hosts: leafs
   gather_facts: no
@@ -60,5 +60,38 @@ Create a file structure for Arista DC L2 type.
         - arista.eos-ipv4
         - arista.eos-mlag
         - arista.eos-system
+################## leafs.yaml <end> ########################
 
+################## spines.yaml<start> ########################
+# Playbook for leafs switches
+- hosts: spines
+  gather_facts: no
 
+  roles:
+        - arista.eos-bridging
+        - arista.eos-interfaces
+        - arista.eos-ipv4
+        - arista.eos-mlag
+        - arista.eos-system
+        - arista.eos-virtual-router
+	- arista.eos-vxlan
+        - arista.eos-route-control
+        - arista.eos-bgp
+################## spines.yaml <end> ########################
+
+Created a file to provide a centrel reference credentials for authentication to all the switches in group_vars/all.yaml
+
+################## all.yaml <start> ########################
+---
+# File to authenticate all the switches with the same directory
+ansible_python_interpreter: python
+provider:
+  host: "{{ inventory_hostname }}"
+  username: admin
+  password: digital1
+  authorize: yes
+  transport: cli
+################## all.yaml <end> ########################
+
+To test the connection, run the command 
+	#ansible leafs -i hostsAristaDCL2 -m ping
