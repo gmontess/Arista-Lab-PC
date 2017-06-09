@@ -1,0 +1,9 @@
+---
+# File to authenticate all the switches with the same directory
+ansible_python_interpreter: python
+provider:
+  host: "{{ inventory_hostname }}"
+  username: admin
+  password: digital1
+  authorize: yes
+  transport: cli
