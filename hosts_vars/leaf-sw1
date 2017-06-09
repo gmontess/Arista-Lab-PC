@@ -1,0 +1,11 @@
+---
+hostname: leaf-sw1
+
+vlans:
+  - vlanid: 1
+    name: default
+  - vlanid: 2
+    name: production
+  - vlanid: 200
+    name: ansible-test
+
