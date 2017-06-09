@@ -1,0 +1,10 @@
+# hosts file
+[spines]
+spine-sw1
+spine-sw2
+
+[leafs]
+leaf-sw1
+leaf-sw2
+leaf-sw3
+leaf-sw4
